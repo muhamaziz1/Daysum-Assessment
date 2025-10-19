@@ -23,8 +23,7 @@ class AccountMoveLine(models.Model):
                 line.price_unit = line.manual_total_price / qty
             else:
                 sorted_taxes = line.tax_ids.sorted(key=lambda t: t.sequence)
-                total_incl = line.manual_total_price
-                subtotal_excl_tax = total_incl
+                subtotal_excl_tax = line.manual_total_price
                 for tax in reversed(sorted_taxes):
                     if tax.amount_type == 'percent':
                         rate = tax.amount / 100.0
