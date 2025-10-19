@@ -1,0 +1,12 @@
+<odoo>
+	<record id="view_move_form_inherit_manual_total_price" model="ir.ui.view">
+		<field name="name">account.move.form.inherit.manual.total.price</field>
+		<field name="model">account.move</field>
+		<field name="inherit_id" ref="account.view_move_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_unit']" position="after">
+				<field name="manual_total_price" optional="show" string="Manual Total Price" attrs="{'invisible': [('parent.move_type', 'not in', ['out_invoice', 'out_refund', 'in_invoice', 'in_refund'])]}"/>
+			</xpath>
+		</field>
+	</record>
+</odoo>

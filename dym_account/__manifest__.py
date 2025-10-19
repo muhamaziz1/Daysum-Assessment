@@ -1,35 +1,26 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "dym_account",
+    'name': "DYM Account",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
-
-    'description': """
-        Long description of module's purpose
+        Add manual total price field on invoice lines for tax-inclusive pricing.
     """,
 
-    'author': "My Company",
-    'website': "https://www.yourcompany.com",
+    'description': """
+        This module extends the account.move.line model to support manual entry of total price including tax, and automatically computes the price_unit based on applied inclusive taxes. The field is visible only on customer and vendor invoices/credit notes.
+    """,
 
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/16.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
-    'category': 'Uncategorized',
-    'version': '0.1',
+    'author': "Muhamad Abdul Aziz",
+    'website': "daysum.net",
 
-    # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'category': 'Accounting',
+    'version': '16.0.1.0.0',
 
-    # always loaded
+    'depends': ['base', 'account'],
+
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'views/account_move_line_view.xml',
     ],
-    # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
-    ],
+
+    'application': False,
 }
