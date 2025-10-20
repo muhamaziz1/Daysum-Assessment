@@ -1,0 +1,10 @@
+<odoo>
+    <data noupdate="1">
+        <record id="exact_total_rounding" model="account.cash.rounding">
+            <field name="name">Exact Total</field>
+            <field name="rounding_method">HALF-UP</field>
+            <field name="rounding">0.01</field>
+            <field name="strategy">biggest_tax</field>
+        </record>
+    </data>
+</odoo>

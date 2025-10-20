@@ -19,6 +19,10 @@
     'depends': ['base', 'account'],
 
     'data': [
+        # DATA
+        'data/cash_rounding_data.xml',
+
+        # VIEWS
         'views/account_move_line_view.xml',
     ],
 
